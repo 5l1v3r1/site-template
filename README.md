@@ -15,7 +15,9 @@ This will create a local browser-sync instance live refreshing all the changes t
 
 ## Deployment
 
-[Create a secret](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables) containing the personal access token, call it `GH_PAT`.
+1. [Create a secret](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables) containing the personal access token, call it `GH_PAT`.
+2. Push to master and check that the action completed successfully.
+3. Configure GitHub pages to publish the `gh-pages` branch.
 
 
 ## Changelog
