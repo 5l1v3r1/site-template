@@ -1,16 +1,49 @@
 {
-  "name": "site-template",
-  "version": "1.0.0",
-  "description": "Minimal static site template for prototyping",
-  "main": "index.js",
-  "scripts": {
-    "watch": "browser-sync --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "browser-sync": "^2.26.7"
-  }
+	"name": "site-template",
+	"version": "1.0.0",
+	"private": "true",
+	"description": "🧪 Minimal static site template with deployment to GitHub pages",
+	"author": {
+		"name": "Alex Page",
+		"email": "alex@alexpage.com.au",
+		"url": "http://alexpage.com.au/"
+	},
+	"contributors": [
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "http://alexpage.com.au"
+		}
+	],
+	"scripts": {
+		"test": "npm run test:content && npm run test:scripts",
+		"test:content": "write-good *.md",
+		"test:scripts": "xo scritps/",
+		"build": "eleventy",
+		"watch": "eleventy --serve",
+		"deploy": "node scripts/deploy"
+	},
+	"engines": {
+		"node": "10"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alex-page/site-template"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alex-page/site-template/issues"
+	},
+	"homepage": "https://github.com/alex-page/site-template#readme",
+	"dependencies": {
+		"@11ty/eleventy": "^0.10.0",
+		"clean-css": "^4.2.3",
+		"uglify-js": "^3.8.0",
+		"workbox-build": "^5.0.0"
+	},
+	"devDependencies": {
+		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+		"write-good": "^1.0.2",
+		"xo": "^0.27.2"
+	}
 }

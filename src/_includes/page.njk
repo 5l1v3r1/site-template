@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{{ pagetitle }} - Site template</title>
+	{% set css %}{% include 'css/style.css' %}{% endset %}
+	<style>{{ css | cssmin | safe }}</style>
+</head>
+<body>
+	<a class="skip-link sr-only" href="#content">Skip to content</a>
+
+	<!-- The main content area -->
+	<main id="content">
+		{{ content | safe }}
+	</main>
+
+	{% set js %}{% include 'js/script.js' %}{% endset %}
+	<script>{{ js | jsmin | safe }}</script>
+	{%block page_end %}{% endblock %}
+</body>
+</html>
